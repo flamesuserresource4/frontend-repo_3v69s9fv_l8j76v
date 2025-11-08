@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero3D from './components/Hero3D';
+import ProjectShowcase from './components/ProjectShowcase';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <main>
+        <Hero3D />
+        <section id="about" className="bg-gradient-to-b from-black to-[#0b0b12] py-16">
+          <div className="mx-auto max-w-4xl px-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Building immersive, interactive web experiences</h2>
+            <p className="text-white/70 leading-relaxed">
+              I craft full‑stack products with Next.js, React, TypeScript, and Node.js. My focus is on
+              performance, delightful motion, and 3D interfaces powered by Three.js and Framer Motion.
+            </p>
+          </div>
+        </section>
+        <ProjectShowcase />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
